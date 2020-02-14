@@ -30,10 +30,7 @@
     </head>
     <body>
 
-        <script src="https://demo.marpi.pl/_/scripts/demo-ui.js"></script>
-        <script type="text/javascript">
-            MarpiDemoUI.init("biomes");
-        </script>
+
 
         <div id="main"></div>
         <div id="gui-container" style="position:absolute;right:0;top:50px;"></div>
@@ -71,7 +68,7 @@
             var simplex = new SimplexNoise();
 
             var myChart = echarts.init(document.getElementById("main"));
-            
+
             window.onresize = myChart.resize;
 
             var UPDATE_DURATION = 1000;
@@ -281,8 +278,11 @@
                 },
                 series: [{
                         type: 'bar3D',
+                        roundCap: true,
                         silent: true,
                         shading: 'realistic',
+                        metalnessAdjust: 1,
+                        bevelSize: 1,
                         instancing: true,
                         barSize: 1 / 1.5,
                         data: [],
